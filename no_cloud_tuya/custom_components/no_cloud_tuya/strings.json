@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ajouter un appareil Tuya local",
+        "description": "Entrez les informations de votre appareil Tuya. Vous pouvez récupérer le Device ID et la clé locale via l'application Tuya ou tinytuya wizard.",
+        "data": {
+          "name": "Nom de l'appareil",
+          "host": "Adresse IP de l'appareil",
+          "device_id": "Device ID",
+          "local_key": "Clé locale (Local Key)",
+          "protocol_version": "Version du protocole"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter à l'appareil. Vérifiez l'IP et la clé locale.",
+      "invalid_auth": "Clé locale invalide.",
+      "unknown": "Erreur inattendue."
+    },
+    "abort": {
+      "already_configured": "Cet appareil est déjà configuré."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options No-Cloud Tuya",
+        "data": {
+          "scan_interval": "Intervalle de rafraîchissement (secondes)"
+        }
+      }
+    }
+  }
+}

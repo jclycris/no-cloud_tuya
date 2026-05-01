@@ -1,0 +1,13 @@
+{
+  "domain": "no_cloud_tuya",
+  "name": "No-Cloud Tuya",
+  "version": "1.0.0",
+  "documentation": "https://github.com/yourname/no-cloud-tuya",
+  "issue_tracker": "https://github.com/yourname/no-cloud-tuya/issues",
+  "requirements": ["tinytuya>=1.15.0"],
+  "dependencies": [],
+  "codeowners": ["@yourname"],
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "homeassistant": "2024.1.0"
+}
