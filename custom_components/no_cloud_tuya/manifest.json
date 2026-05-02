@@ -1,12 +1,12 @@
 {
   "domain": "no_cloud_tuya",
   "name": "No-Cloud Tuya",
-  "version": "1.0.0",
-  "documentation": "https://github.com/yourname/no-cloud-tuya",
-  "issue_tracker": "https://github.com/yourname/no-cloud-tuya/issues",
-  "requirements": ["tinytuya>=1.15.0"],
+  "version": "2.0.0",
+  "documentation": "https://github.com/jclycris/no-cloud_tuya",
+  "issue_tracker": "https://github.com/jclycris/no-cloud_tuya/issues",
+  "requirements": ["tinytuya>=1.15.0", "qrcode>=7.4.2"],
   "dependencies": [],
-  "codeowners": ["@yourname"],
+  "codeowners": ["@jclycris"],
   "config_flow": true,
   "iot_class": "local_polling",
   "homeassistant": "2024.1.0"

@@ -2,24 +2,41 @@
   "config": {
     "step": {
       "user": {
-        "title": "Ajouter un appareil Tuya local",
-        "description": "Entrez les informations de votre appareil Tuya. Vous pouvez récupérer le Device ID et la clé locale via l'application Tuya ou tinytuya wizard.",
+        "title": "Connexion Tuya IoT Cloud",
+        "description": "Connectez-vous sur [iot.tuya.com]({iot_url}), créez un projet, et copiez vos clés API depuis l'onglet **Overview**.",
+        "data": {
+          "client_id": "Access ID (Client ID)",
+          "client_secret": "Access Secret (Client Secret)",
+          "region": "Région du Data Center"
+        }
+      },
+      "qr_code": {
+        "title": "Scannez le QR Code",
+        "description": "Ouvrez l'app **{app_name}** sur votre téléphone.\n\n➡️ Onglet **Moi** → icône QR code (coin supérieur droit) → Scannez ce code :\n\n```\n{qr_code}\n```\n\nUne fois scanné, cliquez sur **Valider**."
+      },
+      "pick": {
+        "title": "Choisir un appareil",
+        "description": "Sélectionnez l'appareil Tuya à ajouter dans Home Assistant."
+      },
+      "confirm": {
+        "title": "Confirmer l'appareil",
+        "description": "**Device ID :** `{device_id}`\n**Local Key :** `{local_key}`\n**Catégorie :** {category}\n\nVérifiez l'adresse IP et donnez un nom à l'appareil.",
         "data": {
           "name": "Nom de l'appareil",
-          "host": "Adresse IP de l'appareil",
-          "device_id": "Device ID",
-          "local_key": "Clé locale (Local Key)",
-          "protocol_version": "Version du protocole"
+          "host": "Adresse IP locale",
+          "protocol_version": "Version protocole Tuya"
         }
       }
     },
     "error": {
-      "cannot_connect": "Impossible de se connecter à l'appareil. Vérifiez l'IP et la clé locale.",
-      "invalid_auth": "Clé locale invalide.",
-      "unknown": "Erreur inattendue."
+      "cannot_connect": "Impossible de joindre l'appareil. Vérifiez l'IP et que l'appareil est sur le même réseau.",
+      "invalid_auth": "Identifiants Tuya Cloud invalides.",
+      "qr_timeout": "Le QR code a expiré sans être scanné. Réessayez.",
+      "no_devices": "Aucun appareil trouvé dans votre compte Tuya.",
+      "unknown": "Erreur inattendue. Vérifiez les logs Home Assistant."
     },
     "abort": {
-      "already_configured": "Cet appareil est déjà configuré."
+      "already_configured": "Cet appareil est déjà configuré dans Home Assistant."
     }
   },
   "options": {

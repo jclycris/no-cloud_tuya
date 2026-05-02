@@ -1,73 +1,61 @@
-# No-Cloud Tuya
+# No-Cloud Tuya v2
 
-Intégration Home Assistant pour appareils Tuya **100% locale** — aucune connexion au cloud Tuya requise.
+Intégration Home Assistant pour appareils Tuya **100% locale** — ajout simplifié par **QR Code**.
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 
 ---
 
-## Fonctionnalités
+## ✨ Nouveauté v2 — Ajout par QR Code
 
-- ✅ Communication **locale** via le protocole Tuya (tinytuya)
-- ✅ Pas de compte Tuya Cloud nécessaire au runtime
-- ✅ Support Switch / Prise connectée (DP1)
-- ✅ Config Flow graphique (UI Home Assistant)
-- ✅ Options flow (intervalle de rafraîchissement configurable)
-- ✅ Compatibilité protocoles **3.1, 3.3, 3.4, 3.5**
+Plus besoin de saisir manuellement Device ID et Local Key !  
+Le nouveau flux guide en **5 étapes automatiques** :
+
+```
+1. Saisir Client ID + Secret (iot.tuya.com)
+        ↓
+2. Un QR Code s'affiche dans Home Assistant
+        ↓
+3. Scanner avec l'app Smart Life / Tuya Smart
+        ↓
+4. Choisir l'appareil dans la liste (auto-détectée)
+        ↓
+5. Confirmer le nom et l'IP — c'est tout ✅
+```
 
 ---
 
 ## Prérequis
 
-1. Connaître l'**adresse IP locale** de votre appareil Tuya
-2. Connaître le **Device ID** et la **Local Key** de l'appareil
+1. Un compte sur [iot.tuya.com](https://iot.tuya.com) (gratuit)
+2. Créer un projet Cloud → récupérer **Access ID** et **Access Secret**
+3. L'app **Smart Life** ou **Tuya Smart** installée sur votre téléphone
 
-> **Comment obtenir la Local Key ?**
-> Utilisez [tinytuya wizard](https://github.com/jasonacox/tinytuya#setup-wizard---getting-local-keys) ou l'outil [tuya-cli](https://github.com/TuyaAPI/cli). Vous aurez besoin d'un compte développeur Tuya IoT Platform (uniquement pour cette étape initiale).
+> La connexion cloud n'est nécessaire **qu'une seule fois** pour la configuration.  
+> Après setup, tout fonctionne **100% en local** sans internet.
 
 ---
 
 ## Installation via HACS
 
-1. Dans HACS → **Intégrations** → Menu ⋮ → **Dépôts personnalisés**
-2. Ajoutez l'URL de ce dépôt, catégorie : **Integration**
-3. Recherchez **No-Cloud Tuya** et installez
-4. Redémarrez Home Assistant
-5. Allez dans **Paramètres → Appareils & Services → Ajouter une intégration**
-6. Cherchez **No-Cloud Tuya** et suivez les étapes
+1. HACS → Intégrations → ⋮ → **Dépôts personnalisés**
+2. URL : `https://github.com/jclycris/no-cloud_tuya` — Catégorie : **Integration**
+3. Installez **No-Cloud Tuya** et redémarrez HA
+4. **Paramètres → Appareils & Services → + Ajouter → No-Cloud Tuya**
 
 ---
 
-## Installation manuelle
+## Fonctionnalités
 
-Copiez le dossier `custom_components/no_cloud_tuya/` dans votre répertoire `config/custom_components/` de Home Assistant.
-
----
-
-## Configuration
-
-| Champ | Description | Exemple |
-|---|---|---|
-| Nom | Nom affiché dans HA | `Prise salon` |
-| Adresse IP | IP locale de l'appareil | `192.168.1.42` |
-| Device ID | Identifiant unique Tuya | `eb...` |
-| Local Key | Clé de chiffrement locale | `a1b2c3...` |
-| Version protocole | Version du protocole Tuya | `3.3` |
-
----
-
-## Dépannage
-
-**L'appareil apparaît indisponible :**
-- Vérifiez que l'IP est correcte et fixe (bail DHCP statique recommandé)
-- Vérifiez que la Local Key n'a pas changé (elle change si vous réinitialisez l'appareil ou le re-pairez)
-
-**Erreur "cannot_connect" au setup :**
-- Assurez-vous que l'appareil est sur le même réseau local que Home Assistant
-- Testez avec `tinytuya` en ligne de commande : `python -m tinytuya scan`
+- ✅ Ajout par QR Code (sans saisie manuelle)
+- ✅ Détection automatique des appareils et Local Keys
+- ✅ Scan réseau local pour trouver les IPs
+- ✅ Communication **100% locale** après setup
+- ✅ Protocoles 3.1, 3.3, 3.4, 3.5
+- ✅ Intervalle de polling configurable (5–300s)
 
 ---
 
 ## Licence
 
-MIT License — voir [LICENSE](LICENSE)
+MIT License
